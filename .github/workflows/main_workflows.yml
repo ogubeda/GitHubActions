@@ -1,6 +1,9 @@
 name: main_workflows
 
-on: push
+on:
+  push:
+    branches:
+      - nodejs_nodeversions_job
 
 jobs:
 
@@ -8,9 +11,18 @@ jobs:
     name: Test Execution
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node: [10, 12]
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Setting node version
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{matrix.node}}
 
       - name: Run jest tests
         run: |
