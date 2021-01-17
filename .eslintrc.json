@@ -3,7 +3,8 @@
   "rules": {
     "semi": [2, "always"],
     "quotes": ["error", "double"],
-    "eol-last": ["error", "never"]
+    "eol-last": ["error", "never"],
+    "no-undef": ["error", "never"]
   }
 }
 
