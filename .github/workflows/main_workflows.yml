@@ -1,6 +1,9 @@
 name: main_workflows
 
-on: push
+on:
+  push:
+    branches:
+      - nodejs_jest_job
 
 jobs:
 

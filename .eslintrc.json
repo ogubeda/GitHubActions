@@ -4,7 +4,10 @@
     "semi": [2, "always"],
     "quotes": ["error", "double"],
     "eol-last": ["error", "never"]
-  }
+  },
+  "env":{
+    "jest":true
+}
 }
 
 
