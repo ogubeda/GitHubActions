@@ -50,6 +50,6 @@ jobs:
       - name: Test JS Hello Actions
         uses: adeloyedeji/github-actions-hello@v1.0
         with:
-          who-to-greet: $DESTINATION_PERSON
+          who-to-greet: ${{Env.DESTINATION_PERSON}}
 
   
