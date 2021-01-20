@@ -3,7 +3,7 @@ name: main_workflows
 on:
   push:
     branches:
-      - nodejs_jest_job
+      - nodejs_environment_job
 
 jobs:
 
@@ -38,5 +38,21 @@ jobs:
           LINTER_RULES_PATH: /
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
           VALIDATE_JAVASCRIPT_ES: true
+
+  environment_test_execution:
+    name: environment_text_execution
+    runs-on: ubuntu-lastest
+    needs: linter-execution
+    input:
+      DESTINATION_PERSON:
+        description: '2DAW'
+        required: true
+        default: '2DAW'
+
+    steps:
+      - name: Test JS Hello Actions
+      - uses: adeloyedeji/github-actions-hello@v1.0
+      with:
+        who-to-greet: ${{ inputs.DESTINATION_PERSON }}
 
   
