@@ -43,16 +43,13 @@ jobs:
     name: environment_text_execution
     runs-on: ubuntu-lastest
     needs: linter-execution
-    inputs:
-      DESTINATION_PERSON:
-        description: '2DAW'
-        required: true
-        default: '2DAW'
+    env:
+      DESTINATION_PERSON: 2DAW
 
     steps:
       - name: Test JS Hello Actions
         uses: adeloyedeji/github-actions-hello@v1.0
         with:
-          who-to-greet: ${{ inputs.DESTINATION_PERSON }}
+          who-to-greet: $DESTINATION_PERSON
 
   
