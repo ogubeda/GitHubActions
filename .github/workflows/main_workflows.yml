@@ -51,8 +51,8 @@ jobs:
 
     steps:
       - name: Test JS Hello Actions
-      - uses: adeloyedeji/github-actions-hello@v1.0
-      - with:
-        who-to-greet: ${{ inputs.DESTINATION_PERSON }}
+        uses: adeloyedeji/github-actions-hello@v1.0
+        with:
+          who-to-greet: ${{ inputs.DESTINATION_PERSON }}
 
   
