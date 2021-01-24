@@ -43,6 +43,7 @@ jobs:
     name: environment_text_execution
     runs-on: ubuntu-latest
     needs: linter-execution
+    
     env:
       DESTINATION_PERSON: 2DAW
 
