@@ -1,0 +1,46 @@
+name: example_workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build-job:
+    name: Build Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Node Run
+        run: |
+          npm install
+          npm run build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: build
+
+  deploy-job:
+    name: Deploy Job
+    runs-on: ubuntu-latest
+    needs: build-job
+
+    steps:
+      - name: Download
+        uses: actions/download-artifact@v2
+        with:
+          name: artifacts
+      
+      - name: Deployment
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: ogubeda.surge.sh
+          project: .
+          login: ${{secrets.SURGE_EMAIL}}
+          token: ${{secrets.SURGE_TOKEN}}
