@@ -5,7 +5,7 @@ inputs:
   tokenFather:
     description: "BotFather Token"
     required: true
-  chatIDs:
+  chatID:
     description: "Chat ID to send the message"
     required: true 
   name:
