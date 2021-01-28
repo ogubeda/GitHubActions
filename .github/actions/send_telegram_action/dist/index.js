@@ -201,9 +201,9 @@ const core = __nccwpck_require__(6046);
 const TelegramBot = __nccwpck_require__(2570);
 const github = __nccwpck_require__(9971) 
 
-const token = core.getInput("token_father");
+const token = core.getInput("tokenFather");
 const bot = new TelegramBot(token, {polling: false});
-var chat_Id=core.getInput("chatId");
+var chat_Id=core.getInput("chatID");
 const name = core.getInput("name");
 const commit = github.context.payload;
 console.log(commit);
@@ -211,7 +211,7 @@ console.log(commit);
 
 
 try {
-    bot.sendMessage(chat_Id,`Workflow executed. Greetings ,${name}:\n\nCommited By:${commit.head_commit.author.name}\Avatar: ${commit.sender.avatar_url}\Url: ${commit.head_commit.url}\Message: ${commit.head_commit.message}`);
+    bot.sendMessage(chat_ID,`Workflow executed. Greetings ,${name}:\n\nCommited By:${commit.head_commit.author.name}\Avatar: ${commit.sender.avatar_url}\Url: ${commit.head_commit.url}\Message: ${commit.head_commit.message}`);
   
   } catch (error) {
     core.setFailed(error.message);
