@@ -202,10 +202,8 @@ const TelegramBot = __nccwpck_require__(2570);
 
 const token = core.getInput("tokenFather");
 const bot = new TelegramBot(token, {polling: false});
-var chatID=core.getInput("chatID");
+var chatID = core.getInput("chatID");
 const name = core.getInput("name");
-console.log(commit);
-
 
 
 try {
