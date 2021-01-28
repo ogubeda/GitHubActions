@@ -1,0 +1,22 @@
+name: "Telegram BotFather"
+description: "Send a Telegram message with BotFather"
+
+inputs:
+  tokenFather:
+    description: "BotFather Token"
+    required: true
+  chatIDs:
+    description: "Chat ID to send the message"
+    required: true 
+  name:
+    description: "Name" 
+    required: true
+  
+
+outputs:
+  message:
+    description: "Done."
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
